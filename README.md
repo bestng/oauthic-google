@@ -1,12 +1,9 @@
-OAuthic for Google APIs
-==========
+![OAuthic for Google APIs](logo.png)
 
 [![Build Status](https://travis-ci.org/bestng/oauthic-google.png?branch=master)](https://travis-ci.org/bestng/oauthic-google)
 [![Coverage Status](https://coveralls.io/repos/bestng/oauthic-google/badge.png)](https://coveralls.io/r/bestng/oauthic-google)
 [![Dependency Status](https://david-dm.org/bestng/oauthic-google.png)](https://david-dm.org/bestng/oauthic-google)
 [![NPM version](https://badge.fury.io/js/oauthic-google.png)](http://badge.fury.io/js/oauthic-google)
-
-![OAuthic Google](logo.png)
 
 Yet another beautiful wrapped [mikeal/request](https://github.com/mikeal/request) with OAuth 2.0 feature for Google APIs.
 
