@@ -1,4 +1,4 @@
-OAuthic Weibo
+OAuthic Google
 ==========
 
 [![Build Status](https://travis-ci.org/bestng/oauthic-google.png?branch=master)](https://travis-ci.org/bestng/oauthic-google)
