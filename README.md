@@ -6,6 +6,8 @@ OAuthic Google
 [![Dependency Status](https://david-dm.org/bestng/oauthic-google.png)](https://david-dm.org/bestng/oauthic-google)
 [![NPM version](https://badge.fury.io/js/oauthic-google.png)](http://badge.fury.io/js/oauthic-google)
 
+![OAuthic Google](logo.png)
+
 Yet another beautiful wrapped [mikeal/request](https://github.com/mikeal/request) with OAuth 2.0 feature for Google APIs.
 
 ## Install
