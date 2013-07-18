@@ -15,7 +15,7 @@ npm install oauthic-google
 
 ## Quick-start
 
-Authorize:
+#### Authorize
 
 ```js
 require('oauthic-google').client({
@@ -28,7 +28,7 @@ require('oauthic-google').client({
   })
 ```
 
-Request:
+#### Request
 
 ```js
 var client = require('oauthic-google').client({
@@ -53,14 +53,14 @@ client.get('/mirror/v1/timeline', function (err, res, timeline) {
 
 Create a new client instance.
 
-Arguments:
+#### Arguments
 
 - **clientInfo** Object - Client informations
     - **clientId** String - App Key
     - **clientScrect** String - App Secret
     - **callbackUri** String - URL to be redirected to by the provider.
 
-Returns:
+#### Returns
 
 - oauthic.Client - Client instance
 
@@ -72,7 +72,7 @@ Client, a wrapped [mikeal/request](https://github.com/mikeal/request) instance.
 
 Build the URL of the authorization page.
 
-Arguments:
+#### Arguments
 
 - **options** - Additional parameters
     - ***scope*** String | Array - Additional scopes. Should be an array or a string separated by a space. Defaults to `openid profile`
@@ -86,7 +86,7 @@ Arguments:
     - ***accessType*** - Either `online` (default value) or `offline`. Should be `offline` if you want a Refresh Token
     - ***approvalPrompt*** - Should be `force` if you want a Refresh Token
 
-Returns:
+#### Returns
 
 - String - URL of the authorization page
 
@@ -94,7 +94,7 @@ Returns:
 
 Get Access Token with an Authorization Code and get ready for making a request.
 
-Arguments:
+#### Arguments
 
 - **code** String - Authorization Code
 - **callback(err, credentical, userInfo)** Function - Callback
@@ -112,7 +112,7 @@ Arguments:
         - ***email*** String The user's email address (requires `email` scope)
         - ***_json*** - Object - Original JSON responsed
 
-Returns:
+#### Returns
 
 - oauthic.Client - Client instance
 
@@ -120,24 +120,37 @@ Returns:
 
 Set the Access Token.
 
-Arguments:
+#### Arguments
 
 - **accessToken** String - Access Token
 - ***expiresAt*** Date | Number - Optional. The time when Access Token expires
 
-Returns:
+#### Returns
 
 - oauthic.Client - Client instance
 
 ### client.refresh(refreshToken, onRefreshed)
 
+Sets the Refresh Token and a handler that would be called when the Access Token is refreshed by the Refresh Token.
 
+#### Arguments
+
+- **refreshToken** String - Refresh Token
+- **onRefreshed(token, expiresAt, done)** Function - A handler that would be called when the Access Token is refreshed successfully by the Refresh Token. It's useful because you may want to save the new Access Token to the database
+    - **token** String - The new Access Token
+    - **expiresAt** Date - The time when the new Access Token expires
+    - **done([err])** Function - A callback that must be called to continue the flow after you have finished dealing with the new Token
+        - ***err*** Error - Would be an error object
+
+#### Returns
+
+- oauthic.Client - Client instance
 
 ### client.expired(onExpired)
 
 Registers a handler that would be called when the Access Token is expired and could not be refreshed.
 
-Arguments:
+#### Arguments
 
 - **onExpired(token)** Function - Handler function
     - **token** String - The expired Access Token
@@ -146,7 +159,7 @@ Arguments:
 
 Wrapped methods from [mikeal/request](https://github.com/mikeal/request). General parameters (e.g. access token) is added. URL could be written in short form, e.g. `/mirror/v1/timeline` for `https://www.googleapi.com/mirror/v1/timeline`.
 
-Errors:
+#### Errors
 
 - oauthic.TokenExpiredError - The Access Token is expired and could not be refreshed
 
@@ -160,7 +173,7 @@ Returns the current user's Access Token. Useful when you'd prefer building reque
 
 Occurs when the Access Token is expired and could not be refreshed.
 
-Properties:
+#### Properties
 
 - **token** String - The expired Access Token
 
