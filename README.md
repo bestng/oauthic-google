@@ -1,4 +1,4 @@
-![OAuthic for Google APIs](logo.png)
+![OAuthic for Google APIs](https://github.com/bestng/oauthic-google/raw/master/logo.png)
 
 [![Build Status](https://travis-ci.org/bestng/oauthic-google.png?branch=master)](https://travis-ci.org/bestng/oauthic-google)
 [![Coverage Status](https://coveralls.io/repos/bestng/oauthic-google/badge.png)](https://coveralls.io/r/bestng/oauthic-google)
@@ -129,13 +129,13 @@ Set the Access Token.
 
 - oauthic.Client - Client instance
 
-### client.refresh(refreshToken, onRefreshed)
+### client.refresh([refreshToken, ]onRefreshed)
 
-Sets the Refresh Token and a handler that would be called when the Access Token is refreshed by the Refresh Token.
+Sets the Refresh Token and/or a handler that would be called when the Access Token is refreshed by the Refresh Token.
 
 #### Arguments
 
-- **refreshToken** String - Refresh Token
+- ***refreshToken*** String - Refresh Token
 - **onRefreshed(token, expiresAt, done)** Function - A handler that would be called when the Access Token is refreshed successfully by the Refresh Token. It's useful because you may want to save the new Access Token to the database
     - **token** String - The new Access Token
     - **expiresAt** Date - The time when the new Access Token expires

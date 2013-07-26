@@ -1,12 +1,11 @@
 {
   "name": "oauthic-google"
-, "version": "0.1.0"
+, "version": "0.1.1"
 , "description": "Yet another beautiful wrapped mikeal/request with OAuth 2.0 feature for Google APIs."
 , "main": "index.js"
 , "dependencies": {
     "async": "~0.2.9"
-  , "request": "~2.22.0"
-  , "oauthic": "~0.1.0"
+  , "oauthic": "~0.1.1"
   }
 , "devDependencies": {
     "mocha": "*"
@@ -20,7 +19,7 @@
 , "scripts": {
     "test": "make test"
   , "blanket": { "pattern": "oauthic-google/index.js" }
-  , "travis-cov": { "threshold": 80 }
+  , "travis-cov": { "threshold": 90 }
   }
 , "author": "XiNGRZ <chenxingyu92@gmail.com>"
 , "repository": {

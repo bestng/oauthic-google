@@ -1,7 +1,7 @@
 var oauthic = require('oauthic')
+  , request = oauthic._request
 
-var request = require('request')
-  , async = require('async')
+var async = require('async')
   , inherits = require('util').inherits
   , stringify = require('querystring').stringify
 

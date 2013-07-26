@@ -244,7 +244,7 @@ describe('oauthic.google.test.js', function () {
 
       })
 
-      describe('client.refresh(refreshToken, onRefreshed)', function () {
+      describe('client.refresh([refreshToken, ]onRefreshed)', function () {
 
         it('should be used to refresh when expired', function (done) {
           var client = oauthic.client({
@@ -255,6 +255,28 @@ describe('oauthic.google.test.js', function () {
           client.token('expired_token', (token_created_at - 60) * 1000)
 
           client.refresh('correct_refresh_token', function (token, expiresAt, next) {
+            next()
+          })
+
+          client.post('/protected', function (err, res, body) {
+            should.not.exist(err)
+            should.exist(body)
+            body.should.have.property('token', 'correct_token')
+            done()
+          })
+        })
+
+        it('should bypass `refreshToken`', function (done) {
+          var client = oauthic.client({
+            clientId: 'correct_client_id'
+          , clientSecret: 'correct_client_secret'
+          })
+
+          client.token('expired_token', (token_created_at - 60) * 1000)
+
+          client.refreshToken = 'correct_refresh_token'
+
+          client.refresh(function (token, expiresAt, next) {
             next()
           })
 
@@ -377,9 +399,10 @@ describe('oauthic.google.test.js', function () {
 
         it('should call `onExpired` if expired when request', function (done) {
           var i = 1
-
           var client = oauthic.client()
+
           client.token('expired_token', (token_created_at - 60) * 1000)
+
           client.expired(function () {
             i.should.equal(2)
             done()
