@@ -1,11 +1,11 @@
 {
   "name": "oauthic-google"
-, "version": "0.1.1"
+, "version": "0.1.2"
 , "description": "Yet another beautiful wrapped mikeal/request with OAuth 2.0 feature for Google APIs."
 , "main": "index.js"
 , "dependencies": {
     "async": "~0.2.9"
-  , "oauthic": "~0.1.1"
+  , "oauthic": "0.1.X"
   }
 , "devDependencies": {
     "mocha": "*"
@@ -17,11 +17,18 @@
   , "travis-cov": "*"
   }
 , "scripts": {
-    "test": "make test"
+    "test": "make test-all"
   , "blanket": { "pattern": "oauthic-google/index.js" }
   , "travis-cov": { "threshold": 90 }
   }
 , "author": "XiNGRZ <chenxingyu92@gmail.com>"
+, "keywords": [
+    "oauth"
+  , "oauth2"
+  , "google"
+  , "api"
+  , "restful"
+  ]
 , "repository": {
     "type": "git"
   , "url": "https://github.com/bestng/oauthic-google.git"
