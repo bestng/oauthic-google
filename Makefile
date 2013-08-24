@@ -26,7 +26,7 @@ test-cov:
 		REPORTER=travis-cov
 
 test-coveralls:
-	@$(MAKE) test
+	@$(MAKE) test REPORTER=tap
 	@$(MAKE) test \
 		MOCHA_OPTS='--require blanket' \
 		REPORTER=mocha-lcov-reporter \
