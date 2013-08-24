@@ -58,7 +58,7 @@ Create a new client instance.
 - **clientInfo** Object - Client informations
     - **clientId** String - App Key
     - **clientScrect** String - App Secret
-    - **callbackUri** String - URL to be redirected to by the provider.
+    - **redirectUri** String - URL to be redirected to by the provider.
 
 #### Returns
 
